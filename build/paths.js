@@ -5,9 +5,12 @@ module.exports = {
 	root: appRoot,
 	html: [
 		appRoot + "**/*.html",
-    "!" + appRoot + "**/*.partial.html"
+    "!" + appRoot + "**/_*.html"
 	],
-	sass: appRoot + "**/*.scss",
+	sass: [
+    'node_modules/material-design-lite/src/material-design-lite.scss',
+    appRoot + "**/*.scss",
+  ],
   img: appRoot + "**/*.{ico,png,jpg}",
   js: appRoot + "**/*.bundle.js",
   output: outputRoot

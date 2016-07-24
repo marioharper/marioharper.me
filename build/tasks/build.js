@@ -8,7 +8,8 @@ var gulp     	= require('gulp'),
   source      = require('vinyl-source-stream'),
   glob        = require('glob'),
   rename      = require('gulp-rename'),
-  es          = require('event-stream');
+  es          = require('event-stream'),
+  concat      = require('gulp-concat');
 
 // compiles nunjucks
 gulp.task('build-html', function () { 
@@ -35,7 +36,7 @@ gulp.task('build-js', function(done){
                 .bundle()
                 .pipe(source(entry))
                 .pipe(rename(function(path){
-                  path.dirname = path.dirname.replace("src\\", "");
+                  path.dirname = "";
                 }))
                 .pipe(gulp.dest(paths.output));
             });
@@ -50,6 +51,7 @@ gulp.task('build-css', function() {
     .pipe(sass({
     		outputStyle: 'compressed'
 		}).on('error', sass.logError))
+    .pipe(concat('main.css'))
     .pipe(gulp.dest(paths.output))
     .pipe(browserSync.stream());
 });
