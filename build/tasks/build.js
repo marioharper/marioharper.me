@@ -30,7 +30,6 @@ gulp.task('build-img', function(){
 gulp.task('build-js', function(done){
   glob(paths.js, function(err, files) {
         if(err) done(err);
-        console.log(files);
         var tasks = files.map(function(entry) {
             return browserify({ entries: [entry] })
                 .bundle()
