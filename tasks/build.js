@@ -47,6 +47,10 @@ gulp.task('build-js', function(done){
 });
 
 gulp.task('build-css', function() {
+  //copy font files
+  gulp.src(["node_modules/font-awesome/fonts/**/*"])
+    .pipe(gulp.dest(paths.output + "fonts/"));
+    
   return gulp.src(paths.sass)
     .pipe(sass({
     		outputStyle: 'compressed'
