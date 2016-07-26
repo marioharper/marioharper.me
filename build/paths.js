@@ -8,8 +8,8 @@ module.exports = {
     "!" + appRoot + "**/_*.html"
 	],
 	sass: [
-    'node_modules/material-design-lite/src/material-design-lite.scss',
     appRoot + "**/*.scss",
+    appRoot + "**/*.css",
   ],
   img: appRoot + "**/*.{ico,png,jpg}",
   js: appRoot + "**/*.bundle.js",
