@@ -13,6 +13,7 @@ var gulp     	= require('gulp'),
 
 // compiles nunjucks
 gulp.task('build-html', function () { 
+  //add cname
   return gulp.src(paths.html) 
     .pipe(nunjucksRender({
       path: ['src']
@@ -60,7 +61,7 @@ gulp.task('build-css', function() {
     .pipe(browserSync.stream());
 });
 
-gulp.task('build', function(callback) {
+gulp.task('build', function(callback) { 
   return runSequence(
     'clean',
     ['build-html', 'build-img', 'build-js', 'build-css'],
