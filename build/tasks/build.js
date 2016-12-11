@@ -39,7 +39,7 @@ gulp.task('build-js', function(done){
                 .pipe(rename(function(path){
                   path.dirname = "";
                 }))
-                .pipe(gulp.dest(paths.output));
+                .pipe(gulp.dest(paths.output +"assets/js/"));
             });
 
         es.merge(tasks).on('end', done);
@@ -50,14 +50,14 @@ gulp.task('build-js', function(done){
 gulp.task('build-css', function() {
   //copy font files
   gulp.src(["node_modules/font-awesome/fonts/**/*"])
-    .pipe(gulp.dest(paths.output + "fonts/"));
+    .pipe(gulp.dest(paths.output + "assets/fonts/"));
     
   return gulp.src(paths.sass)
     .pipe(sass({
     		outputStyle: 'compressed'
 		}).on('error', sass.logError))
     .pipe(concat('main.css'))
-    .pipe(gulp.dest(paths.output))
+    .pipe(gulp.dest(paths.output + "assets/styles/"))
     .pipe(browserSync.stream());
 });
 

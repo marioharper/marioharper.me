@@ -4,7 +4,7 @@ var gulp      = require('gulp'),
 
 // this task utilizes the browsersync plugin
 // to create a dev server instance
-// at http://localhost:9000
+// at http://localhost:5001
 gulp.task('serve', ['build'], function(done) {
   browserSync({
     online: false,

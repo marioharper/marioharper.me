@@ -11,8 +11,8 @@ module.exports = {
     appRoot + "**/*.scss",
     appRoot + "**/*.css",
   ],
-  img: appRoot + "**/*.{ico,png,jpg}",
-  js: appRoot + "**/*.bundle.js",
+  img: appRoot + "assets/images/**/*.{ico,png,jpg}",
+  js: appRoot + "assets/js/**/*.bundle.js",
   output: outputRoot
 }
 
