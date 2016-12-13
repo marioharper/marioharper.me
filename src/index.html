@@ -14,8 +14,56 @@
 
     <main>
       {% include "partials/_logo.html" %}
+
+      <!--drum-kit-->
+      <div class="keys">
+        <div data-key="65" class="key">
+          <kbd>A</kbd>
+          <span class="sound">bass</span>
+        </div>
+        <div data-key="83" class="key">
+          <kbd>S</kbd>
+          <span class="sound">high-hat</span>
+        </div>
+        <div data-key="68" class="key">
+          <kbd>D</kbd>
+          <span class="sound">snare</span>
+        </div>
+      </div>
     </main>
      
-  <script type="text/javascript" src="/assets/js/main.bundle.js"></script>
+    <!--drum-kit audio-->
+    <audio data-key="65" src="/assets/sounds/BD.wav"></audio>
+    <audio data-key="68" src="/assets/sounds/SD.wav"></audio>
+    <audio data-key="83" src="/assets/sounds/CH.wav"></audio>
+
+    <script type="text/javascript" src="/assets/js/main.bundle.js"></script>
+
+    <script type="text/javascript">
+      // drum kit //
+      const keys = document.querySelectorAll('.key');
+
+      window.addEventListener('keydown', playSound);
+      keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+      ////////////////////
+
+      function playSound(evt){
+        const audio = document.querySelector(`audio[data-key="${evt.keyCode}"]`);
+        const key = document.querySelector(`.key[data-key="${evt.keyCode}"]`);
+
+        if (!audio) return;
+
+        audio.currentTime = 0; //rewind audio
+        audio.play();
+        key.classList.add('playing');
+      }
+
+      function removeTransition(evt){
+        if (evt.propertyName !== 'transform') return; 
+
+        this.classList.remove('playing');
+      }
+    </script>
   </body>
 </html>

@@ -13,6 +13,7 @@ module.exports = {
   ],
   img: appRoot + "assets/images/**/*.{ico,png,jpg}",
   js: appRoot + "assets/js/**/*.bundle.js",
+  sound: appRoot + "assets/sounds/**/*.{wav}",
   output: outputRoot
 }
 
