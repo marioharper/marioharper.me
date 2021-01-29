@@ -1,4 +1,5 @@
-.key{
+.key {
+  background-color: unset;
   border: 1px solid white;
   border-radius: 5px;
   margin: 1rem;

@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 import styles from "./DrumKit.module.css";
 
+const playSound = (audio) => {
+  audio.currentTime = 0; //rewind audio
+  audio.play();
+};
+
 const DrumKit = () => {
   const [buttons, setButtons] = useState([]);
 
@@ -30,29 +35,28 @@ const DrumKit = () => {
   useEffect(() => {
     if (!buttons.length) return;
 
-    const playSound = (evt) => {
+    const triggerSound = (evt) => {
       const btn = buttons.find((b) => b.keyCode === evt.keyCode);
 
       if (!btn?.audio) return;
 
-      btn.audio.currentTime = 0; //rewind audio
-      btn.audio.play();
-    };
+      playSound(btn.audio);
+    }
 
-    window.addEventListener("keydown", playSound);
+    window.addEventListener("keydown", triggerSound);
 
     return () => {
-      window.removeEventListener("keydown", playSound);
+      window.removeEventListener("keydown", triggerSound);
     };
   }, [buttons]);
 
   return (
     <div>
       {buttons.map((b) => (
-        <div className={styles.key}>
+        <button className={styles.key} onClick={() => playSound(b.audio)}>
           <kbd className={styles.kbd}>{b.key}</kbd>
           <span className={styles.sound}>{b.name}</span>
-        </div>
+        </button>
       ))}
     </div>
   );
