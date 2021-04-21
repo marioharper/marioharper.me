@@ -8,7 +8,7 @@ const Home = () => {
     <>
       <Head>
         <meta charset="UTF-8" />
-        <title>Mario Harper - Full Stack Engineer</title>
+        <title>Mario Harper - Craftsman</title>
         <meta
           name="description"
           content="Mario Harper is a full-stack engineer living in Austin, Texas."
