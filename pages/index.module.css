@@ -1,63 +1,33 @@
 .main {
-  font-size: 24px;
-  max-width: 400px;
-  height: 80px;
-  text-align: center;
-  position: absolute;
-  top:0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
+  font-size: 1.6rem;
+  left: 50%;
   margin: auto;
+  max-width: 600px;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.logo{
-	display: inline-block;
-} 
-
-.name{
-  display: block;
+.logo h1 {
   font-weight: 400;
-  text-transform: uppercase;
-  font-size: 1.2em;
-  letter-spacing: 2px;
 }
 
-.text {
-  position: relative;
-  left: 3px;
-  display: block;
-  text-transform: uppercase;
-  font-size: .72em;
-  letter-spacing: 8.6px;
-  opacity: .3;
-  line-height: 1.5;
+.logo p {
+  color: #2b2a2a;
 }
 
 .links {
-  line-height: 3;
-}
-
-.links a {
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-.links a i{
-  color: white;
-  font-size: 1.2em;
-  transition: all 0.5s ease;
+  margin-top: 3rem;
 }
 
 .linkIcon {
-  color: white;
-  font-size: 1.2em;
+  color: #090909;
+  font-size: 5rem;
 
   transition: all 0.5s ease;
 }
 
 .link:hover .linkIcon {
   color: #E93D2F;
-  font-size: 1.3em;
 }

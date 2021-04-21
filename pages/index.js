@@ -15,25 +15,22 @@ const Home = () => {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
-          type="text/css"
-        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
       </Head>
 
       <main className={styles.main}>
         <div className={styles.logo}>
-          <span className={styles.name}>Mario Harper</span>
-          <span className={styles.text}>Developer</span>
+          <h1>Mario Harper</h1>
+          
+          <p>Software Engineer, <br/> Woodworker, and Aspiring <br/> Home Cook</p>
+
           <div className={styles.links}>
             <a href="//github.com/marioharper" className={styles.link}>
               <AiFillGithub className={styles.linkIcon} />
             </a>
           </div>
         </div>
-
-        <DrumKit />
       </main>
     </>
   );
