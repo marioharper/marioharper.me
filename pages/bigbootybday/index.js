@@ -6,7 +6,7 @@ const Page = () => {
 
   return (
     <>
-      <Confetti width={width} height={1000} />
+      <Confetti width={width} height={1000} style={{margin: "auto"}}/>
       <h1 style={{ textAlign: "center", marginTop: "30vh" }}>We're going to Hamilton!</h1>
       <div className="event">
         <div className="event-side">
