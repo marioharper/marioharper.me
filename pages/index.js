@@ -1,7 +1,6 @@
 import Head from "next/head";
 import {AiFillGithub} from "react-icons/ai";
 import styles from "./index.module.css";
-import DrumKit from "../components/DrumKit/DrumKit";
 
 const Home = () => {
   return (
